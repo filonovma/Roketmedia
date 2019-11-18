@@ -1,0 +1,117 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "../sprite/sprite"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 19px
+	display: flex
+	flex-direction: column
+	height: 100%
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	background: #f3f4f6
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+p
+	margin: 0
+	padding: 0
+
+i
+	display: inline-block
+
+div
+	margin: 0
+	padding: 0
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+
+.basket
+	@include sprite($basket)
+
+.rating
+	display: flex
+
+
+.rating-item.active
+
+
+#progress
+	width: 100%
+	background-color: #ddd
+
+
+#myBar
+	width: 1%
+	height: 30px
+	background: linear-gradient(90deg, rgba(144,238,144,1) 0%, rgba(143,188,143,1) 35%)
+	text-align: center
+	line-height: 30px
+	color: white
+
+
+
+.rating-area
+	overflow: hidden
+	width: 265px
+	margin: 0 auto
+
+.rating-area:not(:checked) > input
+	display: none
+
+.rating-area:not(:checked) > label
+	float: right
+	width: 42px
+	padding: 0
+	cursor: pointer
+	font-size: 50px
+	line-height: 50px
+	color: lightgrey
+	text-shadow: 1px 1px #bbb
+
+.rating-area:not(:checked) > label:before
+	content: '★'
+
+.rating-area > input:checked ~ label
+	color: gold
+	text-shadow: 1px 1px #c60
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label
+	color: gold
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label
+	color: gold
+	text-shadow: 1px 1px goldenrod
+
+.rate-area > label:active
+	position: relative
+
+
+@import "media" // Always at the end

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="ru" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="ru" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="ru">
+<!--<![endif]-->
+<head>
+<style>
+*{
+  box-sizing: border-box;
+}
+.rating {
+  display: flex;
+}
+.rating-item {
+  width: 40px;
+  height: 40px;
+  background-color: green;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.rating-item.active{
+  background-color: yellow;
+}
+
+#progress{
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+</head>
+<body >
+<section class="rating"> 
+	<div class="rating">
+	  <div class="rating-item active" data-rate="1"></div>
+	  <div class="rating-item" data-rate="2"></div>
+	  <div class="rating-item" data-rate="3"></div>
+	  <div class="rating-item" data-rate="4"></div>
+	  <div class="rating-item" data-rate="5"></div>
+	</div>
+	<div class="rating-score"></div>
+	
+</section>
+	
+<section class="progressBar"> 
+	
+<div id="progress">
+  <div id="myBar">1%</div>
+</div>
+<select id="procSelect">
+	<option selected disabled>1</option>
+	<option>8</option>
+	<option>16</option>
+	<option>32</option>
+	<option>64</option>
+<select>
+<button id="go" type="button">go</button>
+</section>		
+	
+	
+<section class="ajax"> 
+	
+	<button type="button" onclick="ajaxRand();">Ajax random</button>
+	
+</section>	
+	<script src="project.js"></script>
+</body>
+</html>
+
